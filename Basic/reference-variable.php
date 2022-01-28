@@ -1,12 +1,11 @@
 <?php  
 
 // Example 1
-$x = "abc";  
-$$x = 200;  
-echo $x."\n";  
-echo $$x."\n";  
-echo $abc."\n";  
-echo $x."\n";  
+// $x = "abc";  
+// $$x = 200;  
+// echo $x."\n";  
+// echo $$x."\n";  
+// echo $abc."\n";
 
 
 // Example 2
@@ -21,11 +20,11 @@ echo "I live at {$Janarkhil road} \n"; # will produce an error
 
 
 // Example 3
-$name="Cat";  
-${$name}="Dog";  
-${${$name}}="Monkey";  
-echo $name. "\n";  
-echo ${$name}. "\n";  
-echo $Cat. "\n";  
-echo ${${$name}}. "\n";  
-echo $Dog. "\n";
+// $name="Cat";  
+// ${$name}="Dog";  
+// ${${$name}}="Monkey";  
+// echo $name. "\n";  
+// echo ${$name}. "\n";  
+// echo $Cat. "\n";  
+// echo ${${$name}}. "\n";  
+// echo $Dog. "\n";

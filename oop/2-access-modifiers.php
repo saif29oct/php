@@ -21,7 +21,7 @@ class B extends A{
             Here val varialbe is not pre-decalared but it's a valid expression.
             By default its a public property if we not use any access modifier with pre-declared value.
         */
-    } 
+    }
 
     public function show_message(){
         $ary[] = $this->val;
@@ -33,7 +33,7 @@ class B extends A{
         /*
             class B cant access the private property of class A.
             (means a class can't access the private property of it's parent class)
-            It can access only public and private property of it's parent class.
+            It can access only public and protected property of it's parent class.
         */
     }
 }
@@ -47,7 +47,7 @@ class C extends B{
 
 
 // Test 1
-// $call_A = new A('val1','val2',"val3");
+$call_A = new A('val1','val2',"val3");
 // print_r($call_A);           # return a object reference
 // echo $call_A->val1."\n";
 // echo $call_A->val2."\n";    #  Fatal Error cannot access the protected property
@@ -55,7 +55,7 @@ class C extends B{
 
 
 // Test 2
-// $call_B = new B("val1","val2","val3","val4");
+$call_B = new B("val1","val2","val3","val4");
 // print_r($call_B);
 // echo $call_B->val."\n";   #  though it is not pre-declared inside the call but intialized inside
                              #  the constructor we can access it as a public property of that class.

@@ -17,7 +17,7 @@ $user_instance = new User();
 
 $user_instance->name = "Saiful Najnin";
 $user_instance->username = "SaiNaj";
-// $user_instance->followerCount = 4; # Private property can be accessed directly.
+// $user_instance->followerCount = 4; # Private property can't be accessed directly.
 $user_instance->name_not_defined_in_user_class = 4; # It's not an error. We can do this. But cant access 
                                                     # this inside class. Since it's not defined inside the Class
 
