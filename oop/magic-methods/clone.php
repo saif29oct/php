@@ -10,43 +10,89 @@
     to allow any necessary properties that need to be changed.
 */
 
-class SubObject
-{
-    static $instances = 0;
-    public $instance;
+//  Example-1: Create a copy of an object.
+class Example1 {
+    public $color;
+    public $amount;
+  }
+  
+  $obj = new Example1();
+  $obj->color = "red";
+  $obj->amount = 5;
+  $copy = clone $obj;
+  print_r($copy);
 
-    public function __construct() {
-        $this->instance = ++self::$instances;
-    }
 
+//  Example-2: Create a copy of an object which has a reference.
+class Example2 {
+    public $amount;
+  }
+  
+  // Create an object with a reference
+  $value = 5;
+  $obj = new Example2();
+  $obj->amount = &$value;
+  
+  // Clone the object
+  $copy = clone $obj;
+  
+  // Change the value in the original object
+  $obj->amount = 6;
+  
+  // The copy is changed
+  print_r($copy);
+
+
+
+//  Example-3: Use a __clone() method to break references in a copied object
+class Example3 {
+    public $amount;
     public function __clone() {
-        $this->instance = ++self::$instances;
+      $value = $this->amount;
+      unset($this->amount); // Unset breaks references
+      $this->amount = $value;
     }
+  }
+  
+  // Create an object with a reference
+  $value = 5;
+  $obj = new Example3();
+  $obj->amount = &$value;
+  
+  // Clone the object
+  $copy = clone $obj;
+  
+  // Change the value in the original object
+  $obj->amount = 6;
+  
+  // The copy is not changed
+  print_r($copy);
+
+
+
+// Important
+//  Example-4: Changes reflected to all of copied object including the main object if the object that you are cloning contains properties that are objects.
+final class Car {
+  public $model; // making them public to write less code
+
+  public function __construct(CarModel $model) {
+      $this->model = $model;
+  } 
+}
+final class CarModel {
+  public $name;
+  public $year;
+  
+  public function __construct($name, $year) {
+      $this->name = $name;
+      $this->year = $year;
+  }
 }
 
-class MyCloneable
-{
-    public $object1;
-    public $object2;
+$bmwX1 = new Car(new CarModel('X1', 2015));
+$bmwX5 = clone $bmwX1;
 
-    function __clone()
-    {
-        // Force a copy of this->object, otherwise
-        // it will point to same object.
-        $this->object1 = clone $this->object1;
-    }
-}
+$bmwX5->model->name = 'X5';
 
-$obj = new MyCloneable();
-
-$obj->object1 = new SubObject();
-$obj->object2 = new SubObject();
-
-$obj2 = clone $obj;
-
-
-print("Original Object:\n");
-print_r($obj);
-
-print("Cloned Object:\n");
-print_r($obj2);
+var_dump($bmwX1->model);
+var_dump($bmwX5->model);

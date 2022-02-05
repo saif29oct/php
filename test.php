@@ -1,8 +1,26 @@
 <?php
-$area = "Akbarshah";
-$$area = "Ferozshah";
-$$$area = "Janarkhil road";
-$$$$area = "Plot 59";
-echo "My Address is {$$$$area}, {$$$area}, {$$area}\n";
-echo "In Janarkhil which plot number do you live in? \n";
-echo "I live at ${'Janarkhil road'} \n"; # String Interpolation is used to call the spaced variable
+final class Car {
+  public $model; // making them public to write less code
+
+  public function __construct(CarModel $model) {
+      $this->model = $model;
+  } 
+}
+final class CarModel {
+  public $name;
+  public $year;
+  
+  public function __construct($name, $year) {
+      $this->name = $name;
+      $this->year = $year;
+  }
+}
+
+$bmwX1 = new Car(new CarModel('X1', 2015));
+$bmwX5 = clone $bmwX1;
+
+$bmwX5->model->name = 'X5';
+
+var_dump($bmwX1->model);
+var_dump($bmwX5->model);
+// name initialization is reflected.
