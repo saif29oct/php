@@ -13,7 +13,10 @@
  *      PHP's interpretation of overloading is different than most object-oriented languages. Overloading traditionally provides the ability to have multiple methods with the same name but different quantities and types of arguments.
  * 
  * In PHP we use __call($fn, $arguments ) magic method for function overloading.
-
+ * 
+ * Compile time vs Runtime:
+ *      Compile-time and Runtime are the two programming terms used in the software development. Compile-time is the time at which the source code is converted into an executable code while the run time is the time at which the executable code is started running. Both the compile-time and runtime refer to different types of error.
+ * 
  */
 
  class Demo{
