@@ -1,0 +1,4 @@
+In software engineering, dependency injection is a design pattern in which an object receives other objects that it depends on. A form of inversion of control, dependency injection aims to separate the concerns of constructing objects and using them, leading to loosely coupled programs.The pattern ensures that an object which wants to use a given service should not have to know how to construct those services. Instead, the receiving object (or 'client') is provided with its dependencies by external code (an 'injector'), which it is not aware of. Dependency injection solves the following problems:
+    --How can a class be independent from the creation of the objects it depends on?
+    --How can an application, and the objects it uses support different configurations?
+    --How can the behavior of a piece of code be changed without editing it directly?

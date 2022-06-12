@@ -1,4 +1,9 @@
 <?php
+/**
+ * PHP has abstract classes and methods. Classes defined as abstract cannot be instantiated, and any class that contains at least one abstract method must also be abstract. Methods defined as abstract simply declare the method's signature; they cannot define the implementation.
+
+ *When inheriting from an abstract class, all methods marked abstract in the parent's class declaration must be defined by the child class, and follow the usual inheritance and signature compatibility rules.
+ */
 abstract class AbstractClass
 {
     // Force Extending class to define this method

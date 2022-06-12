@@ -1,0 +1,5 @@
+oop
+Encapsulation
+Abstruction
+Inheritance
+Polymorphishm
