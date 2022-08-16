@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-$ary = [12, 3];
+$ary = [12, 1, 5, 23, 45, 3];
 
 function mergeArray($ary1, $ary2)
 {
@@ -31,6 +31,7 @@ function mergeArray($ary1, $ary2)
 
 function mergeSort($ary)
 {
+    if (count($ary) === 1) return $ary;
     $arrayElements = count($ary);
     if ($arrayElements > 1) {
         $devidePointer =  intval(($arrayElements + 1) / 2);
