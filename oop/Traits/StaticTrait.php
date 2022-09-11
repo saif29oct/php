@@ -29,7 +29,7 @@ $p = new C2(); $p->inc(); // echo 1
 
 
 
-// Example: 2
+// Example: Static Methods
 trait StaticExample2 {
     public static function doSomething() {
         return 'Doing something';
@@ -43,7 +43,7 @@ class Example2 {
 Example2::doSomething();
 
 
-// Example: 3
+// Example: Static Properties
 trait StaticExample3 {
     public static $static = 'foo';
 }
