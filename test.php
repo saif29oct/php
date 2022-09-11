@@ -1,26 +1,20 @@
 <?php
-final class Car {
-  public $model; // making them public to write less code
 
-  public function __construct(CarModel $model) {
-      $this->model = $model;
-  } 
-}
-final class CarModel {
-  public $name;
-  public $year;
-  
-  public function __construct($name, $year) {
-      $this->name = $name;
-      $this->year = $year;
+declare(strict_types=1);
+
+$ary = [1, 2, [3, 4, [5, 6, [9,], 7, 8], 10, [11, 12]]];
+
+function arraySum($ary)
+{
+  $sum = 0;
+  foreach ($ary as $value) {
+    if (is_array($value)) {
+      $sum += arraySum($value);
+    } else {
+      $sum += $value;
+    }
   }
+  return $sum;
 }
 
-$bmwX1 = new Car(new CarModel('X1', 2015));
-$bmwX5 = clone $bmwX1;
-
-$bmwX5->model->name = 'X5';
-
-var_dump($bmwX1->model);
-var_dump($bmwX5->model);
-// name initialization is reflected.
+echo arraySum($ary);
