@@ -15,3 +15,8 @@
  *      preg_replace — Perform a regular expression search and replace 
  *      preg_split — Split string by a regular expression
  */
+
+/**
+ * MetaCharacters (Need to be escaped):
+        .[{()\^$|?*+
+ */

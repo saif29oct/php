@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-$ary = [12, 1, 5, 23, 45, 3];
-
 function mergeArray($ary1, $ary2)
 {
     $mergeAry = [];
@@ -48,6 +46,8 @@ function mergeSort($ary)
     }
 }
 
+
+$ary = [12, 1, 5, 23, 45, 3];
 $sortedArray = mergeSort($ary);
 
 print_r($sortedArray);
