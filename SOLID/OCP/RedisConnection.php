@@ -33,5 +33,3 @@ class RedisStorage{
         
     }
 }
-
-new RedisLocalConnection("hist");
