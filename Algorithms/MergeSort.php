@@ -14,7 +14,7 @@ function mergeArray($ary1, $ary2)
 
     $k = 0;
     while ($k < $count) {
-        if ($j != $ary2Count && ($i == $ary1Count || $ary2[$j] <= $ary1[$i])) {
+        if ($j != $ary2Count && ($i == $ary1Count || ($ary2[$j] <= $ary1[$i]))) {
             $mergeAry[] = $ary2[$j];
             $j++;
         } else {
@@ -32,7 +32,7 @@ function mergeSort($ary)
     if (count($ary) === 1) return $ary;
     $arrayElements = count($ary);
     if ($arrayElements > 1) {
-        $devidePointer =  intval(($arrayElements + 1) / 2);
+        $devidePointer = intval(($arrayElements + 1) / 2);
         $splitedArray = array_chunk($ary, $devidePointer);
         $subArray1 = $splitedArray[0];
         $subArray2 = $splitedArray[1];
@@ -42,7 +42,7 @@ function mergeSort($ary)
         if (count($subArray2) > 1) {
             $subArray2 = mergeSort($subArray2);
         }
-        return mergeArray($subArray1, $subArray2);
+        return mergeArray($subArray1, $subArray2); //logN(base 2)
     }
 }
 
