@@ -8,19 +8,23 @@ class ProductBuilder implements ProductBuilderInterface
 {
     private array $productFields;
 
-    public function __construct(private string $name, private int $price, ...$others)
+    public function __construct(private string $name, private int $price, array $others)
     {
-        [$this->productFields] = $others;
-        $this->productFields[] = $this->name;
-        $this->productFields[] = $this->price;
+
+        $this->productFields = $others;
+        $this->productFields['name'] = $this->name;
+        $this->productFields['price'] = $this->price;
     }
 
-    public function buildProduct()
+    public function buildProduct($product):ProductInterface
     {
-        $product = new Product();
+        $product = new $product();
         foreach ($this->productFields as $field => $value) {
             $method = 'set_' . $field;
             call_user_func_array(array($product, $method), [$value]);
         }
+        return $product;
     }
+
+
 }
