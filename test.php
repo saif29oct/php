@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 include './vendor/autoload.php';
 
-use \Saif\Php\DesignPatterns\BuilderPattern\ProductBuilder;
-use \Saif\Php\DesignPatterns\BuilderPattern\Product;
+use \Saif\Php\DesignPatterns\BuilderPattern\KhataBuilder;
+use \Saif\Php\DesignPatterns\BuilderPattern\Khata;
+use \Saif\Php\DesignPatterns\BuilderPattern\BuilderFacade;
 
-$productBuilder = new ProductBuilder('sampleKhata', 20, ['title'=>'khata']);
-$productBuilder->buildProduct(Product::class);
-var_dump($productBuilder);
+//$productBuilder = new KhataBuilder('sampleKhata', 20, ['title'=>'khata']);
+//$productBuilder->buildProduct(Khata::class);
+//var_dump($productBuilder);
+
+$productBuilder = KhataBuilder::build(['name'=>'khata-1', 'title'=>'khata']);

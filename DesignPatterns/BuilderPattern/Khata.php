@@ -2,7 +2,7 @@
 
 namespace Saif\Php\DesignPatterns\BuilderPattern;
 
-class Product implements ProductInterface
+class Khata implements ProductInterface
 {
     public function set_name(string $name)
     {
@@ -18,7 +18,10 @@ class Product implements ProductInterface
         $this->title = $title;
     }
 
-    public function set_category(String $category){
-        $this->category = $category;
+    public function set_category(int $units){
+        $this->category = get_class();
+        $this->units = $units;
+        $this->unitName = KhataUnit::getUnit();
     }
+
 }

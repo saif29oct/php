@@ -17,6 +17,7 @@ class RedisLocalConnection extends RedisConnection{
         
     }
 }
+
 class RedisCloudConnection extends RedisConnection{
     protected function __construct($host){
         
@@ -26,7 +27,6 @@ class RedisCloudConnection extends RedisConnection{
         
     }
 }
-
 
 class RedisStorage{
     public function __construct(RedisConnection $rdisClient){
