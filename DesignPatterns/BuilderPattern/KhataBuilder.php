@@ -5,21 +5,20 @@ namespace Saif\Php\DesignPatterns\BuilderPattern;
 class KhataBuilder implements ProductBuilderInterface
 {
 
-    public static function build(array $others):ProductInterface
+    public static function build(array $productFields): ProductInterface
     {
-        $productFields = $others;
         $product = new Khata();
+        $product -> validateMustHaveProperties(array_keys($productFields));
         foreach ($productFields as $field => $value) {
-            $method = 'set_' . $field;
+            $method = 'set_'.$field;
             call_user_func_array(array($product, $method), [$value]);
         }
         return $product;
     }
 
-    public function store(ProductInterface $khata){
-
+    public static function store(ProductInterface $khata)
+    {
     }
-
 
 
 }

@@ -5,8 +5,6 @@ declare(strict_types=1);
 include './vendor/autoload.php';
 
 use \Saif\Php\DesignPatterns\BuilderPattern\KhataBuilder;
-use \Saif\Php\DesignPatterns\BuilderPattern\Khata;
-use \Saif\Php\DesignPatterns\BuilderPattern\BuilderFacade;
 
 //$productBuilder = new KhataBuilder('sampleKhata', 20, ['title'=>'khata']);
 //$productBuilder->buildProduct(Khata::class);
