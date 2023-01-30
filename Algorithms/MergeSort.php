@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function mergeArray($ary1, $ary2)
+function mergeArray(array $ary1, array $ary2)
 {
     $mergeAry = [];
 
@@ -27,7 +27,7 @@ function mergeArray($ary1, $ary2)
     return $mergeAry;
 }
 
-function mergeSort($ary)
+function mergeSort(array $ary)
 {
     if (count($ary) === 1) return $ary;
     $arrayElements = count($ary);
