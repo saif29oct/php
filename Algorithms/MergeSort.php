@@ -29,8 +29,9 @@ function mergeArray(array $ary1, array $ary2)
 
 function mergeSort(array $ary)
 {
-    if (count($ary) === 1) return $ary;
     $arrayElements = count($ary);
+    if ($arrayElements === 1) return $ary;
+    
     if ($arrayElements > 1) {
         $devidePointer = intval(($arrayElements + 1) / 2);
         $splitedArray = array_chunk($ary, $devidePointer);

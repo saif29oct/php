@@ -18,12 +18,7 @@ function arraySum(array $ary): int
 
 function arraySum1(array $ary): int
 {
-    return array_reduce($ary, function ($sum, $val){
-        $sum = is_array($val) ? $sum + arraySum1($val) : $sum + $val;
-
-        return $sum;
-    });
-
+    return array_reduce($ary, fn ($sum, $val) => is_array($val) ? $sum + arraySum1($val) : $sum + $val);
 }
 
 echo arraySum1($ary1);
