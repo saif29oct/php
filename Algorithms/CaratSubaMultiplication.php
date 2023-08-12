@@ -37,9 +37,7 @@ function karatSuba(int $x, int $y): int
 
     $adPbc = karatSuba(($a + $b), ($c + $d));
 
-    $mul = $ac * pow(10, $nx) + ($adPbc - ($ac + $bd)) * pow(10, $nx / 2) + $bd;
-
-    return $mul;
+    return $ac * pow(10, $nx) + ($adPbc - ($ac + $bd)) * pow(10, $nx / 2) + $bd;
 }
 
 echo karatSuba(12, 10);

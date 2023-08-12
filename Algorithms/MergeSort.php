@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function mergeArray(array $ary1, array $ary2)
+function mergeArray(array $ary1, array $ary2): array
 {
     $mergeAry = [];
 
@@ -27,7 +27,7 @@ function mergeArray(array $ary1, array $ary2)
     return $mergeAry;
 }
 
-function mergeSort(array $ary)
+function mergeSort(array $ary): array
 {
     $arrayElements = count($ary);
     if ($arrayElements === 1) return $ary;
@@ -45,8 +45,8 @@ function mergeSort(array $ary)
         }
         return mergeArray($subArray1, $subArray2); //logN(base 2)
     }
+ return $ary;
 }
-
 
 $ary = [12, 1, 5, 23, 45, 3];
 $sortedArray = mergeSort($ary);

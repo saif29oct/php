@@ -1,6 +1,6 @@
 <?php
 /**
- *      PCRE stands for Perl Compitable Regular Expression.
+ *      PCRE stands for Perl Compatible Regular Expression.
  * 
  * PCRE have the following 11 functions in PHP.
  *      preg_filter — Perform a regular expression search and replace
