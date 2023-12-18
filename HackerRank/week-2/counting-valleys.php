@@ -1,5 +1,6 @@
 <?php
-function countingValleys($path) {
+function countingValleys($path): int
+{
     $hiking = new Class{
         public ?string $status = null;
         public int $hike_steps = 0;
