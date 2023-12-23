@@ -50,5 +50,5 @@ function karatSuba(int $x, int $y): int
     return $ac * pow(10, 2 * $hn) + $adPbc * pow(10, $hn) + $bd;
 }
 
-$result = karatSuba(12, 12);
+$result = karatSuba(1000, 1000);
 echo $result.PHP_EOL;
